@@ -7,7 +7,7 @@
         <title>{{ __('Main menu')}}</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Nunito:400,500,700,400italic|Material+Icons">
 
         <!-- Styles -->
         <link href=" {{ asset('css/app.css') }}" rel="stylesheet">
@@ -20,9 +20,6 @@
     </head>
     <body class="antialiased">
     @yield('content')
-
-    
-    <script src="{{ asset('js/bootstrap.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
