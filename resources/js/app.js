@@ -1,32 +1,56 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+// =========================================================
+// * Vue Material Kit - v1.2.2
+// =========================================================
+//
+// * Product Page: https://www.creative-tim.com/product/vue-material-kit
+// * Copyright 2019 Creative Tim (https://www.creative-tim.com)
+// * Licensed under MIT (https://github.com/creativetimofficial/vue-material-kit/blob/master/LICENSE.md)
+//
+// * Coded by Creative Tim
+//
+// =========================================================
+//
+// * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+// window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import Vue from "vue";
+import App from "./views/App.vue";
+import router from "./router";
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+import MaterialKit from "./plugins/material-kit";
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.config.productionTip = false;
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+Vue.use(MaterialKit);
+
+const NavbarStore = {
+  showNavbar: false
+};
+
+Vue.mixin({
+  data() {
+    return {
+      NavbarStore
+    };
+  }
+});
+
+const files = require.context('./', true, /\.vue$/i);
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+
+
+// new Vue({
+//   router,
+//   render: h => h(App)
+// }).$mount("#app");
+
 
 const app = new Vue({
-    el: '#app',
+  el: '#app',
+  components: { App },
+  router,
 });
