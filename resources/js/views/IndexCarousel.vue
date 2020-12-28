@@ -18,12 +18,23 @@
                 <div class="carousel-caption">
                   <h4>
                     <md-button class="md-success md-lg">
-                      <md-icon>done</md-icon>
-                      ENABLE BTCPAY SERVER
+                      <md-icon>refresh</md-icon>
+                      Refresh
                     </md-button>
                   </h4>
                 </div>
-                <img :src="carousel1" alt="carousel1" />
+                <img :src="status" alt="Status" />
+              </slide>
+              <slide>
+                <div class="carousel-caption">
+                  <h4>
+                    <md-button class="md-success md-lg">
+                      <md-icon>refresh</md-icon>
+                      Refresh
+                    </md-button>
+                  </h4>
+                </div>
+                <img :src="bitcoin" alt="bitcoin" />
               </slide>
               <slide>
                 <div class="carousel-caption">
@@ -64,7 +75,9 @@ export default {
     return {
       carousel1: require("../assets/img/nature-2.jpg"),
       carousel2: require("../assets/img/nature.jpg"),
-      carousel3: require("../assets/img/nature-3.jpg")
+      carousel3: require("../assets/img/nature-3.jpg"),
+      bitcoin: require("../assets/img/bitcoin-background.webp"),
+      status: require("../assets/img/raspiblitz-status.png")
     };
   },
   methods: {
