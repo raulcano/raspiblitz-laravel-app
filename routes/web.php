@@ -17,3 +17,5 @@ use App\Http\Controllers\MainMenuController;
 Route::get('/', [MainMenuController::class, 'index']);
 
 Route::get('/home', [MainMenuController::class, 'home']);
+
+Route::get('/test', [MainMenuController::class, 'refreshStatus']);
