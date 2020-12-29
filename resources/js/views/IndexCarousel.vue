@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
-    <div class="md-layout">
+    <div class="md-layout ml-0 mr-0">
         <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
-          <md-card class="mt-0 mb-0 ml-0">
+          <md-card class="mt-0 mb-0">
             <carousel
               :per-page="1"
               loop
