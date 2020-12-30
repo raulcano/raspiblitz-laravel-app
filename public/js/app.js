@@ -52234,7 +52234,7 @@ var render = function() {
         [
           _c(
             "md-card",
-            { staticClass: "mt-0 mb-0" },
+            { staticClass: "mt-1 mb-1" },
             [
               _c(
                 "carousel",
