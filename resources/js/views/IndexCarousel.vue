@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="md-layout">
         <div class="md-layout-item md-size-66 mx-auto md-small-size-100">
-          <md-card class="mt-1 mb-1">
+          <md-card class="mt-0 mb-0 ml-0">
             <carousel
               :per-page="1"
               loop
