@@ -52227,7 +52227,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "wrapper" }, [
-    _c("div", { staticClass: "md-layout ml-0 mr-0" }, [
+    _c("div", { staticClass: "md-layout" }, [
       _c(
         "div",
         { staticClass: "md-layout-item md-size-66 mx-auto md-small-size-100" },
