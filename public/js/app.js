@@ -52119,20 +52119,18 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "material-kit" } }, [
-    _c(
-      "div",
-      { class: { "nav-open": _vm.NavbarStore.showNavbar } },
-      [
-        _c("router-view", { attrs: { name: "header" } }),
-        _vm._v(" "),
-        _c("div", [_c("router-view")], 1),
-        _vm._v(" "),
-        _c("router-view", { attrs: { name: "footer" } })
-      ],
-      1
-    )
-  ])
+  return _c(
+    "div",
+    { attrs: { id: "material-kit" } },
+    [
+      _c("router-view", { attrs: { name: "header" } }),
+      _vm._v(" "),
+      _c("div", [_c("router-view")], 1),
+      _vm._v(" "),
+      _c("router-view", { attrs: { name: "footer" } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -52226,92 +52224,81 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "wrapper" }, [
-    _c("div", { staticClass: "md-layout" }, [
+  return _c(
+    "md-card",
+    { staticClass: "mt-0 mb-0 ml-0 mr-0" },
+    [
       _c(
-        "div",
-        { staticClass: "md-layout-item md-size-66 mx-auto md-small-size-100" },
+        "carousel",
+        {
+          attrs: {
+            "per-page": 1,
+            loop: "",
+            speed: 700,
+            autoplay: "",
+            "autoplay-timeout": 5000,
+            "mouse-drag": true,
+            navigationEnabled: "",
+            navigationNextLabel:
+              "<i class='material-icons'>keyboard_arrow_right</i>",
+            navigationPrevLabel:
+              "<i class='material-icons'>keyboard_arrow_left</i>"
+          }
+        },
         [
-          _c(
-            "md-card",
-            { staticClass: "mt-0 mb-0 ml-0" },
-            [
+          _c("slide", [
+            _c("div", { staticClass: "carousel-caption" }, [
               _c(
-                "carousel",
-                {
-                  attrs: {
-                    "per-page": 1,
-                    loop: "",
-                    speed: 700,
-                    autoplay: "",
-                    "autoplay-timeout": 5000,
-                    "mouse-drag": true,
-                    navigationEnabled: "",
-                    navigationNextLabel:
-                      "<i class='material-icons'>keyboard_arrow_right</i>",
-                    navigationPrevLabel:
-                      "<i class='material-icons'>keyboard_arrow_left</i>"
-                  }
-                },
+                "h4",
                 [
-                  _c("slide", [
-                    _c("div", { staticClass: "carousel-caption" }, [
-                      _c(
-                        "h4",
-                        [
-                          _c(
-                            "md-button",
-                            { staticClass: "md-success md-lg" },
-                            [
-                              _c("md-icon", [_vm._v("refresh")]),
-                              _vm._v(
-                                "\n                    Refresh\n                  "
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
+                  _c(
+                    "md-button",
+                    { staticClass: "md-success md-lg" },
+                    [
+                      _c("md-icon", [_vm._v("refresh")]),
+                      _vm._v(
+                        "\n                    Refresh\n                  "
                       )
-                    ]),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: _vm.status, alt: "Status" } })
-                  ]),
-                  _vm._v(" "),
-                  _c("slide", [
-                    _c("div", { staticClass: "carousel-caption" }, [
-                      _c(
-                        "h4",
-                        [
-                          _c(
-                            "md-button",
-                            { staticClass: "md-success md-lg" },
-                            [
-                              _c("md-icon", [_vm._v("refresh")]),
-                              _vm._v(
-                                "\n                    Refresh\n                  "
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("img", { attrs: { src: _vm.bitcoin, alt: "bitcoin" } })
-                  ])
+                    ],
+                    1
+                  )
                 ],
                 1
               )
-            ],
-            1
-          )
+            ]),
+            _vm._v(" "),
+            _c("img", { attrs: { src: _vm.status, alt: "Status" } })
+          ]),
+          _vm._v(" "),
+          _c("slide", [
+            _c("div", { staticClass: "carousel-caption" }, [
+              _c(
+                "h4",
+                [
+                  _c(
+                    "md-button",
+                    { staticClass: "md-success md-lg" },
+                    [
+                      _c("md-icon", [_vm._v("refresh")]),
+                      _vm._v(
+                        "\n                    Refresh\n                  "
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("img", { attrs: { src: _vm.bitcoin, alt: "bitcoin" } })
+          ])
         ],
         1
       )
-    ])
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
