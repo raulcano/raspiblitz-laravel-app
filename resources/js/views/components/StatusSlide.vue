@@ -30,7 +30,7 @@
             
         </div>
         <h4>
-        <md-button class="md-success md-lg"
+        <md-button class="md md-lg"
             @click.prevent="refreshStatus">
             <div v-if="refreshing === false">
                 <md-icon>refresh</md-icon> Refresh
