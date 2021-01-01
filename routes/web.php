@@ -18,4 +18,4 @@ Route::get('/', [MainMenuController::class, 'index']);
 
 Route::get('/home', [MainMenuController::class, 'home']);
 
-Route::get('/test', [MainMenuController::class, 'refreshStatus']);
+Route::get('/refreshStatus', [MainMenuController::class, 'refreshStatus']);

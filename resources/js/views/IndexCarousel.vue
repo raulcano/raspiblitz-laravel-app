@@ -16,12 +16,7 @@
             >
               <slide>
                 <div class="carousel-caption">
-                  <h4>
-                    <md-button class="md-success md-lg">
-                      <md-icon>refresh</md-icon>
-                      Refresh
-                    </md-button>
-                  </h4>
+                  <status-slide></status-slide>
                 </div>
                 <img :src="status" alt="Status" />
               </slide>
@@ -45,9 +40,11 @@
 </template>
 
 <script>
+import StatusSlide from './components/StatusSlide.vue';
 
 export default {
   components: {
+    StatusSlide
   },
   name: "index-carousel",
   bodyClass: "index-page",
@@ -76,7 +73,5 @@ export default {
   .btn-container {
     display: flex;
   }
-
 }
-
 </style>

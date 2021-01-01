@@ -39,5 +39,8 @@ class MainMenuController extends Controller
         $id = 1;
         $status_db_line['id'] = $id;
         DB::table('status')->upsert($status_db_line, 'id', array_keys($status_db_line));
+
+        $res = json_encode(DB::table('status')->where('id', $id)->first(), true);
+        return $res;
     }
 }
