@@ -56757,7 +56757,7 @@ var render = function() {
         _c(
           "md-button",
           {
-            staticClass: "md-success md-lg",
+            staticClass: "md md-lg",
             on: {
               click: function($event) {
                 $event.preventDefault()
