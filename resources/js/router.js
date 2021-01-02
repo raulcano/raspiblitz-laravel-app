@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Index from "./views/Index.vue";
 import IndexSample from "./views/IndexSample.vue";
 import IndexCarousel from "./views/IndexCarousel.vue";
+import Settings from "./views/Settings.vue";
 import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
 import Profile from "./views/Profile.vue";
@@ -26,6 +27,15 @@ export default new Router({
       path: "/carousel",
       name: "index-carousel",
       components: { default: IndexCarousel, header: '', footer: '' },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" }
+      }
+    },
+    {
+      path: "/settings",
+      name: "settings",
+      components: { default: Settings, header: '', footer: '' },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" }

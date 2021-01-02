@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
@@ -42,5 +43,18 @@ class MainMenuController extends Controller
 
         $res = json_encode(DB::table('status')->where('id', $id)->first(), true);
         return $res;
+    }
+
+    public function loadSettings(){
+        $res = json_encode(DB::table('settings')->get(), true);
+        return $res;
+    }
+    
+    // $settings is a Json object
+    public function upsertSettings(Request $request){
+        $data = $request->all();
+        $name = $data['params']['name'];
+        $settings = json_encode($data['params']['settings']);
+        DB::table('settings')->upsert(['name' => $name, 'settings' => $settings], ['name'], ['settings']);
     }
 }

@@ -14,12 +14,13 @@
               navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
               navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
             >
-              <slide>
+              <slide v-if="">
                 <div class="carousel-caption">
                   <status-slide></status-slide>
                 </div>
                 <img :src="status" alt="Status" />
               </slide>
+              
               <slide>
                 <div class="carousel-caption">
                   <h4>

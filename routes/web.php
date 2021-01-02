@@ -16,6 +16,9 @@ use App\Http\Controllers\MainMenuController;
 
 Route::get('/', [MainMenuController::class, 'index']);
 
-Route::get('/home', [MainMenuController::class, 'home']);
+Route::get('/home', [MainMenuController::class, 'home'])->name('home');
 
-Route::get('/refreshStatus', [MainMenuController::class, 'refreshStatus']);
+Route::get('/refreshStatus', [MainMenuController::class, 'refreshStatus'])->name('refreshStatus');
+
+Route::get('/loadSettings', [MainMenuController::class, 'loadSettings'])->name('loadSettings');
+Route::post('/upsertSettings', [MainMenuController::class, 'upsertSettings'])->name('upsertSettings');
