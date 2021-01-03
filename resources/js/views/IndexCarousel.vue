@@ -1,43 +1,48 @@
 <template>
-  <!-- <div class="wrapper">
-    <div class="md-layout">
-        <div class="md-layout-item md-size-66 mx-auto md-small-size-100"> -->
-          <md-card class="mt-0 mb-0 ml-0 mr-0">
-            <carousel
-              :per-page="1"
-              loop
-              :speed="700"
-              autoplay
-              :autoplay-timeout="5000"
-              :mouse-drag="true"
-              navigationEnabled
-              navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
-              navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
-            >
-              <slide v-if="">
-                <div class="carousel-caption">
-                  <status-slide></status-slide>
-                </div>
-                <img :src="status" alt="Status" />
-              </slide>
-              
-              <slide>
-                <div class="carousel-caption">
-                  <h4>
-                    <md-button class="md-success md-lg">
-                      <md-icon>refresh</md-icon>
-                      Refresh
-                    </md-button>
-                  </h4>
-                </div>
-                <img :src="bitcoin" alt="bitcoin" />
-              </slide>
-            </carousel>
-          </md-card>
-        <!-- </div>
-      </div>
+  <md-card class="mt-0 mb-0 ml-0 mr-0">
+    <div class="settings-link" title="Settings">
+    <a href="#/settings">
+        <md-icon>settings</md-icon>
+        </a>
+    </div>
+    
 
-  </div> WRAPPER -->
+    <carousel
+      :per-page="1"
+      loop
+      :speed="700"
+      autoplay
+      :autoplay-timeout="5000"
+      :mouse-drag="true"
+      navigationEnabled
+      navigationNextLabel="<i class='material-icons'>keyboard_arrow_right</i>"
+      navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
+    >
+    
+
+      <slide v-if="generalSettings.status_slide">
+        <div class="carousel-caption">
+          <status-slide></status-slide>
+        </div>
+        <img :src="status" alt="Status" />
+      </slide>
+      
+
+      <slide v-if="generalSettings.charts_slide">
+        <div class="carousel-caption">
+          <h4>
+            <md-button class="md-success md-lg">
+              <md-icon>refresh</md-icon>
+              Refresh
+            </md-button>
+          </h4>
+        </div>
+        <img :src="bitcoin" alt="bitcoin" />
+      </slide>
+
+
+    </carousel>
+  </md-card>
 </template>
 
 <script>
@@ -57,14 +62,8 @@ export default {
       status: require("../assets/img/raspiblitz-status.png")
     };
   },
-  methods: {
-  },
-  computed: {
-    headerStyle() {
-      return {
-        backgroundImage: `url(${this.image})`
-      };
-    },
+  mounted() {
+        this.loadSettingsFromDB();
   },
   
 };
@@ -74,5 +73,12 @@ export default {
   .btn-container {
     display: flex;
   }
+}
+
+.settings-link{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 100;
 }
 </style>

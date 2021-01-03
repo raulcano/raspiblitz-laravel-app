@@ -34,9 +34,41 @@ const NavbarStore = {
 Vue.mixin({
   data() {
     return {
+      settings: [],
+      loading: false,
       NavbarStore
     };
-  }
+  },
+  methods: {
+    getSettings(name){
+      var res = {};
+      var i = 0;
+      while(res !== {} && i < this.settings.length ){
+        if (this.settings[i].name === name){
+          res = this.settings[i].settings;
+        }
+        i++;
+      }
+      return res;
+    },
+    loadSettingsFromDB(){
+      this.loading = true;
+      axios
+        .get('/loadSettings')
+        .then(res => {
+            this.settings = res.data;
+            for (var settingsLine of this.settings) {
+              settingsLine.settings = JSON.parse(settingsLine.settings);
+            }
+            this.loading = false;
+        });
+    },
+  },
+  computed: {
+    generalSettings: function (){
+      return this.getSettings('general');
+    }
+  },
 });
 
 const files = require.context('./', true, /\.vue$/i);
@@ -52,5 +84,5 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
 const app = new Vue({
   el: '#app',
   components: { App },
-  router,
+  router
 });
