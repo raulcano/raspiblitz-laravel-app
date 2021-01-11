@@ -34,7 +34,24 @@ const NavbarStore = {
 Vue.mixin({
   data() {
     return {
-      settings: [],
+      settings: [
+        {
+          name: 'general',
+          settings: {
+            status_slide: true,
+            charts_slide: true,
+          }
+        },
+        {
+          name: 'charts',
+          settings: {
+            BTC_currency: 'EUR',
+            chart: false,
+            chart_type: 'price',
+            chart_period: 'year',
+          }
+        },
+      ],
       loading: false,
       NavbarStore
     };
@@ -50,6 +67,18 @@ Vue.mixin({
         i++;
       }
       return res;
+    },
+    initializeSettings(){
+      this.loading = true;
+      axios
+        .post('/initializeSettings', {
+          params: {
+            settings: this.settings,
+          }
+        })
+        .then(res => {
+          this.loading = false;
+        });
     },
     loadSettingsFromDB(){
       this.loading = true;
@@ -67,6 +96,10 @@ Vue.mixin({
   computed: {
     generalSettings: function (){
       return this.getSettings('general');
+    },
+
+    chartsSettings: function (){
+      return this.getSettings('charts');
     }
   },
 });

@@ -2,9 +2,6 @@
     <div> <!-- GENERAL container -->
         
         <div id="status-container" style="color: black">
-            <!-- <ul>
-                <li v-for="value,key in status">{{key}}: {{value}}</li>
-            </ul> -->
             <div id="title">
                 <!-- blockchain info -->
                 <h1>{{status.info_state}}</h1>
@@ -23,9 +20,6 @@
                 <br>
                 <br>
                 <br>
-
-
-
             </div>
             
         </div>

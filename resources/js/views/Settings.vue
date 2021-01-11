@@ -30,8 +30,52 @@
         <!-- <md-tab id="tab-posts" md-label="Charts" md-icon="timeline" v-if="generalSettings['charts_slide']"> -->
         <md-tab id="tab-posts" md-label="Charts" md-icon="timeline" >
           <p class="text-muted text-left">
-            No options available
+            Configure the charts slide with the following options
             </p><br>
+
+            <div class="md-layout md-gutter">
+                  <div class="md-layout-item">
+                    <md-field>
+                      <label for="BTC_currency">Show BTC price in</label>
+                        <md-select v-model="chartsSettings['BTC_currency']" name="BTC_currency" id="BTC_currency" @md-selected="upsertSettings('charts',chartsSettings)">
+                          <md-option value="EUR">Euro</md-option>
+                          <md-option value="USD">US Dollar</md-option>
+                          <md-option value="GBP">British Pound</md-option>
+                          <!-- <md-option value="CHF">Swiss Franc</md-option> -->
+                        </md-select>
+                      </md-field>
+                  </div>
+            </div>
+            <br>
+            <md-switch v-model="chartsSettings['chart']" @change="upsertSettings('charts',chartsSettings)">Show BTC chart</md-switch>
+            <br>
+            <div class="md-layout md-gutter">
+                <div class="md-layout-item">
+                    <md-radio v-model="chartsSettings['chart_type']" value="price" class="md-primary" 
+                      @change="upsertSettings('charts',chartsSettings)"
+                      :disabled="!chartsSettings['chart']">Price chart</md-radio>
+                </div>
+                <div class="md-layout-item">
+                    <md-radio v-model="chartsSettings['chart_type']" value="hashrate" class="md-primary" 
+                  @change="upsertSettings('charts',chartsSettings)"
+                  :disabled="!chartsSettings['chart']">Hashrate chart</md-radio>
+                </div>
+                <div class="md-layout-item">
+                  <md-field>
+                      <label for="chart_period">Period</label>
+                        <md-select v-model="chartsSettings['chart_period']" name="chart_period" id="chart_period" 
+                        @md-selected="upsertSettings('charts',chartsSettings)"
+                        :disabled="!chartsSettings['chart']">
+                          <md-option value="day" :disabled="!chartsSettings['chart']">Day</md-option>
+                          <md-option value="week" :disabled="!chartsSettings['chart']">Week</md-option>
+                          <md-option value="month" :disabled="!chartsSettings['chart']">Month</md-option>
+                          <md-option value="year" :disabled="!chartsSettings['chart']">Year</md-option>
+                        </md-select>
+                </md-field>
+                </div>
+            </div>
+            <br>
+            <md-progress-bar v-if="loading" md-mode="indeterminate"></md-progress-bar>
         </md-tab>
 
 
@@ -73,6 +117,7 @@ export default {
   },
 
   mounted() {
+        this.initializeSettings();
         this.loadSettingsFromDB();
   },
 };

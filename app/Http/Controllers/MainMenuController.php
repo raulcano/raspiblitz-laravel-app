@@ -57,4 +57,13 @@ class MainMenuController extends Controller
         $settings = json_encode($data['params']['settings']);
         DB::table('settings')->upsert(['name' => $name, 'settings' => $settings], ['name'], ['settings']);
     }
+
+    public function initializeSettingsToDB(Request $request){
+        $data = $request->all();
+        $settings = $data['params']['settings'];
+        foreach($settings as $s){
+            DB::table('settings')->insertOrIgnore(['name' => $s['name'], 'settings' => json_encode($s['settings'])]);
+        }
+        
+    }
 }

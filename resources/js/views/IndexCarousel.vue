@@ -30,12 +30,7 @@
 
       <slide v-if="generalSettings.charts_slide">
         <div class="carousel-caption">
-          <h4>
-            <md-button class="md-success md-lg">
-              <md-icon>refresh</md-icon>
-              Refresh
-            </md-button>
-          </h4>
+          <charts-slide></charts-slide>
         </div>
         <img :src="bitcoin" alt="bitcoin" />
       </slide>
@@ -47,10 +42,11 @@
 
 <script>
 import StatusSlide from './components/StatusSlide.vue';
+import ChartsSlide from './components/ChartsSlide.vue';
 
 export default {
   components: {
-    StatusSlide
+    StatusSlide, ChartsSlide
   },
   name: "index-carousel",
   bodyClass: "index-page",
@@ -63,7 +59,8 @@ export default {
     };
   },
   mounted() {
-        this.loadSettingsFromDB();
+      this.initializeSettings();
+      this.loadSettingsFromDB();
   },
   
 };

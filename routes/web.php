@@ -22,3 +22,4 @@ Route::get('/refreshStatus', [MainMenuController::class, 'refreshStatus'])->name
 
 Route::get('/loadSettings', [MainMenuController::class, 'loadSettings'])->name('loadSettings');
 Route::post('/upsertSettings', [MainMenuController::class, 'upsertSettings'])->name('upsertSettings');
+Route::post('/initializeSettings', [MainMenuController::class, 'initializeSettingsToDB'])->name('initializeSettings');
