@@ -6,7 +6,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Storage;
 class MainMenuController extends Controller
 {
     public function index(){
@@ -19,8 +19,8 @@ class MainMenuController extends Controller
 
     public function refreshStatus(){
         $files = array (
-            'conf' => env('RASPIBLITZ_CONF'),
-            'info'=> env('RASPIBLITZ_INFO')
+            'conf' => Storage::disk('local')->path(env('RASPIBLITZ_CONF')),
+            'info' => Storage::disk('local')->path(env('RASPIBLITZ_INFO')),
         );
         $status_db_line = array();
         foreach($files as $prefix => $file){
