@@ -58,6 +58,10 @@ export default {
     },
     mounted() {
         this.refreshStatus();
+
+        setInterval(function () {
+            this.refreshStatus();
+        }.bind(this), 30000); 
     }   
 }
 </script>
