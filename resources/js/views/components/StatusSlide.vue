@@ -11,7 +11,7 @@
 
                 <!-- host info -->
                 <h6>
-                <span class="badge badge-primary">{{status.conf_hostname}}</span>
+                <span class="badge badge-primary">{{status.conf_hostname}}</span><br><br>
                  running
                 <span class="badge badge-info">{{status.info_baseimage}} ({{status.info_cpu}})</span>, 
                  with Raspiblitz
