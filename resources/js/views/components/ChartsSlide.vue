@@ -49,7 +49,7 @@ export default {
 
         setInterval(function () {
             this.refreshCharts();
-        }.bind(this), 30000); 
+        }.bind(this), 50000); 
     } 
 }
 </script>
