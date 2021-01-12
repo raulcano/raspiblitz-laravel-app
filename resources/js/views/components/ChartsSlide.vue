@@ -45,9 +45,12 @@ export default {
     },
     mounted() {
         this.refreshCharts();
-        // this.initializeSettings();
         this.loadSettingsFromDB();
-    }   
+
+        setInterval(function () {
+            this.refreshCharts();
+        }.bind(this), 30000); 
+    } 
 }
 </script>
 <style scoped>
