@@ -33,6 +33,7 @@ class CreateStatusTable extends Migration
             # /mnt/hdd/raspiblitz.conf
             $table->string('conf_raspiBlitzVersion');
             $table->string('conf_network');
+            $table->string('conf_networkUPnP');
             $table->string('conf_chain');
             $table->string('conf_hostname');
             $table->string('conf_lcd2hdmi');
@@ -45,6 +46,8 @@ class CreateStatusTable extends Migration
             $table->tinyInteger('conf_setnetworkname');
             $table->string('conf_lndPort');
             $table->string('conf_lndAddress');
+            $table->string('conf_joinmarket');
+            $table->string('conf_nodeJS');
 
             $table->timestamps();
         });
