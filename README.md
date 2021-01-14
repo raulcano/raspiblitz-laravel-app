@@ -13,6 +13,7 @@ At this moment, the Slider offers the following functionality:
 
 This is a very early version of a bigger product that I had in mind, but due to time constraints, I decided to make it available already for anyone to play with and/or improve.
 
+
 ## How to install and run it
 
 The current version is not yet fully integrated in the menu of Raspiblitz, but you can install and uninstall it very easily.
@@ -39,6 +40,15 @@ When the app has been enabled with the 'on' flag, it runs a simple php server in
 This means that you can also access the slider screen and interact with it with from your regular workstation (presumably from where you are accessing to your Raspiblitz). In particular, if you tunnel the ports appropriately, you can access the slider like this:
 
 http://127.0.0.1:8000/#/carousel
+
+## Adding your own functionality [optional]
+
+The most basic functionality has been programmed so a carousel of 2 slides is displayed in the Raspiblitz's LCD.  
+Anyone can add their own slides with a bit of knowledge of Laravel and Vue.
+
+To add new functionality, 
+- Add a new Vue component with your slide in the folder ```resources/js/views/components```. E.g. ```resources/js/views/components/MyslideSlide.vue```
+- Import your component and add the necessary slide code in the file ```resources/js/views/IndexCarousel.vue```
 
 ## Work needed
 
