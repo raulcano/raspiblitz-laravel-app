@@ -34,7 +34,7 @@ In order to stop the slider, type this into the command line:
 ```
 ./config.scripts/bonus.slider.sh off
 ```
-### Serving the app
+### Serving the app to your computer [optional]
 When the app has been enabled with the 'on' flag, it runs a simple php server in the Raspiblitz localhost and in the default port 8000. 
 This means that you can also access the slider screen and interact with it with from your regular workstation (presumably from where you are accessing to your Raspiblitz). In particular, if you tunnel the ports appropriately, you can access the slider like this:
 
@@ -44,7 +44,9 @@ http://127.0.0.1:8000/#/carousel
 
 The following issues are the immediate priority:
 - Allow the slides to react to the touchscreen.
-- 
+- Refresh the bitcoin prices automatically every X seconds
+- Integrate the app installation script in the Raspiblitz menu
+- Many other optimizations and improvements (e.g. run the php server as a Linux service, maybe?)
 
 ## License
 
