@@ -1,4 +1,6 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center">
+<img src="./public/images/raspiblitz-status-2.png" width="400">
+</p>
 
 ## About the Slider
 
@@ -9,11 +11,40 @@ At this moment, the Slider offers the following functionality:
 - Another slide with Bitcoin current price.
 - A settings page to modify the Bitcoin-related slide.
 
+This is a very early version of a bigger product that I had in mind, but due to time constraints, I decided to make it available already for anyone to play with and/or improve.
 
+## How to install and run it
 
-## Contributing
+The current version is not yet fully integrated in the menu of Raspiblitz, but you can install and uninstall it very easily.
 
-....
+Download this file
+https://github.com/raulcano/raspiblitz/blob/slider/home.admin/config.scripts/bonus.slider.sh and copy it into your Raspiblitz, in this directory:
+```
+/home/admin/config.scripts/
+```
+
+Once the file is copied, go to the Raspiblizt command line and type this command:
+```
+./config.scripts/bonus.slider.sh on
+```
+
+This will install all dependencies needed and download this app into your Raspiblitz. If all is good, after a couple of minutes you will see the slider in your LCD without further interaction of yours.
+
+In order to stop the slider, type this into the command line:
+```
+./config.scripts/bonus.slider.sh off
+```
+### Serving the app
+When the app has been enabled with the 'on' flag, it runs a simple php server in the Raspiblitz localhost and in the default port 8000. 
+This means that you can also access the slider screen and interact with it with from your regular workstation (presumably from where you are accessing to your Raspiblitz). In particular, if you tunnel the ports appropriately, you can access the slider like this:
+
+http://127.0.0.1:8000/#/carousel
+
+## Work needed
+
+The following issues are the immediate priority:
+- Allow the slides to react to the touchscreen.
+- 
 
 ## License
 

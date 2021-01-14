@@ -47,9 +47,9 @@ export default {
         this.refreshCharts();
         this.loadSettingsFromDB();
 
-        setInterval(function () {
-            this.refreshCharts();
-        }.bind(this), 50000); 
+        // setInterval(function () {
+        //     this.refreshCharts();
+        // }.bind(this), 50000); 
     } 
 }
 </script>
