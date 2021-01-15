@@ -4,8 +4,7 @@
 
 ## About the Slider
 
-This app is a Laravel-based project offered as optional service in the Raspiblitz. The purpose of the Slider is to show a carousel of slides in the Raspiblitz LCD leveraging a more familiar looking 
-At this moment, the Slider offers the following functionality:
+This app is a Laravel-based project offered as optional service in the Raspiblitz. The purpose of the Slider is to show a carousel of slides in the Raspiblitz LCD leveraging a more modern user interface. At this moment, the Slider offers the following functionality:
 
 - One slide with basic Raspiblitz's status information.
 - Another slide with Bitcoin current price.
